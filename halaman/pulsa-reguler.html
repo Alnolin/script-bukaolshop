@@ -620,12 +620,14 @@
 
             //salah
             else {
-                document.getElementById('input-catatan').classList.add('d-none');
-                document.getElementById('tampilkan-produk').classList.add('d-none');
-                document.getElementById('ubah-nomor').classList.remove('d-none');
+                document.getElementById('input-catatan').classList.remove('d-none');
+                document.getElementById('tampilkan-produk').classList.remove('d-none');
+                document.getElementById('ubah-nomor').classList.add('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
+
+                alert('Silahkan Masukan / periksa kembali nomor tujuan anda');
 
             }
         }
@@ -647,12 +649,7 @@
     <script>
         function klik(link) {
             var catatan_transaksi = document.getElementById('catatan-produk').value;
-            if (catatan_transaksi == '') {
-                alert('Silahkan Masukan Nomor Tujuan terlebih dahulu')
-            }
-            else {
-                window.location = link + '?catatan=' + catatan_transaksi;
-            }
+            window.location = link + '?catatan=' + catatan_transaksi;
         }
     </script>
 </body>
