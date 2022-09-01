@@ -20,22 +20,32 @@
             width: 100%;
         }
 
+        .input-data-transaksi button {
+            width: 100%;
+        }
+
         .data-produk {
-            margin-top: 140px;
+            margin-top: 90px;
         }
 
         .data-produk-2 {
             margin-top: 240px;
         }
 
-        .catatan-produk {
+        .input-catatan {
             background-color: #1e73be;
             padding: 35px 0px 20px 0px;
         }
 
-        .kategori-produk {
+        .tampilkan-produk {
             padding: 20px 0 10px 0;
             background-color: white;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .ubah-nomor {
+            padding: 20px 0 10px 0;
+            background-color: #6d6d6d;
             box-shadow: 0 0 10px grey;
         }
 
@@ -69,12 +79,23 @@
 <body>
     <div class="col-sm">
         <div class="input-data-transaksi">
-            <div class="catatan-produk">
+            <div class="input-catatan" id="input-catatan">
                 <div class="container">
                     <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk"
-                        name="catatan-produk" placeholder="Masukan Nomor Tujuan" onchange="tampil()">
+                        name="catatan-produk" placeholder="Masukan Nomor Meter">
                 </div>
             </div>
+            <div class="tampilkan-produk" id="tampilkan-produk">
+                <div class="container">
+                    <button type="button" class="btn btn-success" onclick="tampil()">Lanjutkan</button>
+                </div>
+            </div>
+            <div class="ubah-nomor d-none" id="ubah-nomor">
+                <div class="container">
+                    <button type="button" class="btn btn-danger" onclick="ubah()">Ubah Nomor</button>
+                </div>
+            </div>
+
         </div>
 
         <!-- PRODUK -->
@@ -138,29 +159,40 @@
     <script>
         function tampil() {
             var catatan_transaksi = document.getElementById('catatan-produk').value;
-            var prefix = catatan_transaksi.slice(0, 4);
+
             // salah
-            if (prefix == '') {
+            if (catatan_transaksi == '') {
                 document.getElementById('produk-token-listrik').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.remove('d-none');
+                document.getElementById('input-catatan').classList.remove('d-none');
+                document.getElementById('ubah-nomor').classList.add('d-none');
+                alert('Silahkan Masukan / periksa Nomor Meter terlebih dahulu');
             }
 
             // benar
             else {
                 document.getElementById('produk-token-listrik').classList.remove('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
             }
         }
+    </script>
+
+    <script>
+        function ubah() {
+                document.getElementById('produk-token-listrik').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.remove('d-none');
+                document.getElementById('input-catatan').classList.remove('d-none');
+                document.getElementById('ubah-nomor').classList.add('d-none');
+            }
     </script>
 
 
     <script>
         function klik(link) {
             var catatan_transaksi = document.getElementById('catatan-produk').value;
-            if (catatan_transaksi == '') {
-                alert('Silahkan Masukan Nomor Tujuan terlebih dahulu')
-            }
-            else {
-                window.location = link + '?catatan=' + catatan_transaksi;
-            }
+            window.location = link + '?catatan=' + catatan_transaksi;
         }
     </script>
 
