@@ -20,22 +20,32 @@
             width: 100%;
         }
 
+        .input-data-transaksi button {
+            width: 100%;
+        }
+
         .data-produk {
-            margin-top: 140px;
+            margin-top: 90px;
         }
 
         .data-produk-2 {
             margin-top: 240px;
         }
 
-        .catatan-produk {
+        .input-catatan {
             background-color: #1e73be;
             padding: 35px 0px 20px 0px;
         }
 
-        .kategori-produk {
+        .tampilkan-produk {
             padding: 20px 0 10px 0;
             background-color: white;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .ubah-nomor {
+            padding: 20px 0 10px 0;
+            background-color: #6d6d6d;
             box-shadow: 0 0 10px grey;
         }
 
@@ -68,10 +78,20 @@
 <body>
     <div class="col-sm">
         <div class="input-data-transaksi">
-            <div class="catatan-produk">
+            <div class="input-catatan" id="input-catatan">
                 <div class="container">
                     <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk"
-                        name="catatan-produk" placeholder="Masukan Nomor Tujuan" onchange="tampil()">
+                        name="catatan-produk" placeholder="Masukan Nomor Tujuan">
+                </div>
+            </div>
+            <div class="tampilkan-produk" id="tampilkan-produk">
+                <div class="container">
+                    <button type="button" class="btn btn-success" onclick="tampil()">Lanjutkan</button>
+                </div>
+            </div>
+            <div class="ubah-nomor d-none" id="ubah-nomor">
+                <div class="container">
+                    <button type="button" class="btn btn-danger" onclick="ubah()">Ubah Nomor</button>
                 </div>
             </div>
         </div>
@@ -386,46 +406,73 @@
             var prefix = catatan_transaksi.slice(0, 4);
             //telkomsel
             if (prefix == '0811') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0812') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0813') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0821') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0822') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0823') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0851') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0852') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0853') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
@@ -433,51 +480,81 @@
 
             // XL AXIS
             else if (prefix == '0817') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0818') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0819') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0859') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0877') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0878') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0831') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0832') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0833') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
             }
             else if (prefix == '0838') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-xl-axis').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
@@ -485,36 +562,57 @@
 
             //indosat
             else if (prefix == '0814') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0815') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0816') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0855') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0856') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0857') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
             }
             else if (prefix == '0858') {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-indosat').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
@@ -522,10 +620,26 @@
 
             //salah
             else {
+                document.getElementById('input-catatan').classList.add('d-none');
+                document.getElementById('tampilkan-produk').classList.add('d-none');
+                document.getElementById('ubah-nomor').classList.remove('d-none');
                 document.getElementById('produk-telkomsel').classList.add('d-none');
                 document.getElementById('produk-xl-axis').classList.add('d-none');
                 document.getElementById('produk-indosat').classList.add('d-none');
+
             }
+        }
+    </script>
+
+    <script>
+        function ubah() {
+            document.getElementById('ubah-nomor').classList.add('d-none');
+            document.getElementById('input-catatan').classList.remove('d-none');
+            document.getElementById('tampilkan-produk').classList.remove('d-none');
+            document.getElementById('ubah-nomor').classList.add('d-none');
+            document.getElementById('produk-telkomsel').classList.add('d-none');
+            document.getElementById('produk-xl-axis').classList.add('d-none');
+            document.getElementById('produk-indosat').classList.add('d-none');
         }
     </script>
 
@@ -542,4 +656,5 @@
         }
     </script>
 </body>
+
 </html>
