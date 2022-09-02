@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Bayar BPJS Kesehatan</title>
+    <title>Bayar Tagihan PLN</title>
 
     <style>
         /*transaksi*/
@@ -82,7 +82,7 @@
             <div class="input-catatan" id="input-catatan">
                 <div class="container">
                     <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk"
-                        name="catatan-produk" placeholder="Masukan Nomor BPJS">
+                        name="catatan-produk" placeholder="Masukan Nomor Pelanggan">
                 </div>
             </div>
             <div class="tampilkan-produk" id="tampilkan-produk">
@@ -111,10 +111,10 @@
         function proses() {
             var catatan_transaksi = document.getElementById('catatan-produk').value;
             if (catatan_transaksi == '') {
-                alert('Silahkan isi / periksa nomor BPJS anda');
+                alert('Silahkan isi / periksa nomor pelanggan anda');
             }
             else {
-                window.location = 'https://armaonestore.com/produk/bayar-tagihan-bpjs-1415229?catatan=' + catatan_transaksi;
+                window.location = 'https://armaonestore.com/produk/bayar-tagihan-pln-1415230?catatan=' + catatan_transaksi;
             }
         }
     </script>
